@@ -1,0 +1,19 @@
+{
+    "name": "stevenbuehner/temporary-cache-service",
+    "description": "Small service that provides the ability to temporarily cache data",
+    "type": "library",
+    "require": {
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steven Buehner",
+            "email": "buehner@me.com"
+        }
+    ],
+    "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+}
