@@ -1,19 +1,27 @@
 {
-    "name": "stevenbuehner/temporary-cache-service",
-    "description": "Small service that provides the ability to temporarily cache data",
-    "type": "library",
-    "require": {
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Steven Buehner",
-            "email": "buehner@me.com"
-        }
-    ],
-    "autoload": {
+  "name": "stevenbuehner/temporary-cache-service",
+  "description": "Small service that provides the ability to temporarily cache data",
+  "type": "library",
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Steven Buehner",
+      "email": "buehner@me.com"
+    }
+  ],
+  "autoload": {
     "classmap": [
       "src/"
     ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "StevenBuehner\\Test\\": "tests"
+    }
   }
 }
