@@ -20,3 +20,9 @@ It offers the functions:
      * @param mixed $value
      */
     public function setCache($key, $value);
+
+    /**
+     * Clears the cache of the given key if it does exist
+     * @param mixed $key
+     */
+    public function clearCache($key);
