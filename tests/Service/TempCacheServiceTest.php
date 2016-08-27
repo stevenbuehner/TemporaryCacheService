@@ -19,7 +19,7 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
         $key2   = 'test2'; // String
         $key3   = 'test3'; // String
         $value1 = 'blub';
-        $value2 = [ 'array', 1 ];
+        $value2 = array( 'array', 1 );
         $value3 = 20;
 
         $this->assertFalse($this->cacheService->hasCache($key1));
@@ -69,7 +69,7 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
         $key2   = 'test2'; // String
         $key3   = 'test3'; // String
         $value1 = 'blub';
-        $value2 = [ 'array', 1 ];
+        $value2 = array( 'array', 1 );
         $value3 = 20;
 
         $this->cacheService->setCache($key1, $value1);
@@ -103,11 +103,11 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testSetAndGetCacheArray() {
-        $key1   = [ __FUNCTION__, 'test1' ]; // Array-Key
-        $key2   = [ __FUNCTION__, 'test2' ]; // Array-Key
-        $key3   = [ __FUNCTION__, 'test3' ]; // Array-Key
+        $key1   = array( __FUNCTION__, 'test1' ); // Array-Key
+        $key2   = array( __FUNCTION__, 'test2' ); // Array-Key
+        $key3   = array( __FUNCTION__, 'test3' ); // Array-Key
         $value1 = 'blub';
-        $value2 = [ 'array', 1 ];
+        $value2 = array( 'array', 1 );
         $value3 = 20;
 
         $this->assertFalse($this->cacheService->hasCache($key1));
@@ -144,11 +144,11 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
 
 
     public function testClearCacheArray() {
-        $key1   = [ __FUNCTION__, 'test1' ]; // Array-Key
-        $key2   = [ __FUNCTION__, 'test2' ]; // Array-Key
-        $key3   = [ __FUNCTION__, 'test3' ]; // Array-Key
+        $key1   = array( __FUNCTION__, 'test1' ); // Array-Key
+        $key2   = array( __FUNCTION__, 'test2' ); // Array-Key
+        $key3   = array( __FUNCTION__, 'test3' ); // Array-Key
         $value1 = 'blub';
-        $value2 = [ 'array', 1 ];
+        $value2 = array( 'array', 1 );
         $value3 = 20;
 
         $this->cacheService->setCache($key1, $value1);
@@ -185,7 +185,7 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
      * @expectedException StevenBuehner\Ergebnisberechnung\Exceptions\CacheKeyDoesNotExistException
      */
     public function testSetAndGetCacheArrayFail() {
-        $key1 = [ __FUNCTION__, 'test1' ]; // Array-Key
+        $key1 = array( __FUNCTION__, 'test1' ); // Array-Key
 
         $this->cacheService->getCache($key1);
     }
