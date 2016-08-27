@@ -3,13 +3,6 @@
  * Copyright (c) 2016. by Steven Bühner
  ******************************************************************************/
 
-/**
- * Created by PhpStorm.
- * User: steven
- * Date: 14.04.16
- * Time: 22:47
- */
-
 namespace StevenBuehner\Ergebnisberechnung\Service;
 
 use StevenBuehner\Ergebnisberechnung\Exceptions\CacheKeyDoesNotExistException;
@@ -36,6 +29,10 @@ class TempCacheService {
         return isset($this->confCache[$key]);
     }
 
+    protected function makeHash($mixed) {
+        return md5(serialize($mixed));
+    }
+
     /**
      * @param mixed $key
      * @return mixed
@@ -51,16 +48,24 @@ class TempCacheService {
     }
 
     /**
+     * Clears the cache of the given key if it does exist
+     * @param mixed $key
+     */
+    public function clearCache($key) {
+        $key = $this->makeHash($key);
+
+        if ($this->_hasCache($key)) {
+            unset($this->confCache[$key]);
+        }
+    }
+
+    /**
      * @param mixed $key
      * @param mixed $value
      */
     public function setCache($key, $value) {
         $key                   = $this->makeHash($key);
         $this->confCache[$key] = $value;
-    }
-
-    protected function makeHash($mixed) {
-        return md5(serialize($mixed));
     }
 
 
