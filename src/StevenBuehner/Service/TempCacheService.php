@@ -62,10 +62,13 @@ class TempCacheService {
     /**
      * @param mixed $key
      * @param mixed $value
+     * @return mixed $value
      */
     public function setCache($key, $value) {
         $key                   = $this->makeHash($key);
         $this->confCache[$key] = $value;
+
+        return $value;
     }
 
 

@@ -26,14 +26,16 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($this->cacheService->hasCache($key2));
         $this->assertFalse($this->cacheService->hasCache($key3));
 
-        $this->cacheService->setCache($key1, $value1);
+        $set = $this->cacheService->setCache($key1, $value1);
+        $this->assertEquals($value1, $set);
 
         $this->assertTrue($this->cacheService->hasCache($key1));
         $this->assertFalse($this->cacheService->hasCache($key2));
         $this->assertFalse($this->cacheService->hasCache($key3));
         $this->assertEquals($this->cacheService->getCache($key1), $value1);
 
-        $this->cacheService->setCache($key2, $value2);
+        $set = $this->cacheService->setCache($key2, $value2);
+        $this->assertEquals($value2, $set);
 
         $this->assertTrue($this->cacheService->hasCache($key1));
         $this->assertTrue($this->cacheService->hasCache($key2));
@@ -41,7 +43,8 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($this->cacheService->getCache($key1), $value1);
         $this->assertEquals($this->cacheService->getCache($key2), $value2);
 
-        $this->cacheService->setCache($key3, $value3);
+        $set = $this->cacheService->setCache($key3, $value3);
+        $this->assertEquals($value3, $set);
 
         $this->assertTrue($this->cacheService->hasCache($key1));
         $this->assertTrue($this->cacheService->hasCache($key2));
@@ -111,14 +114,16 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($this->cacheService->hasCache($key2));
         $this->assertFalse($this->cacheService->hasCache($key3));
 
-        $this->cacheService->setCache($key1, $value1);
+        $set = $this->cacheService->setCache($key1, $value1);
+        $this->assertEquals($value1, $set);
 
         $this->assertTrue($this->cacheService->hasCache($key1));
         $this->assertFalse($this->cacheService->hasCache($key2));
         $this->assertFalse($this->cacheService->hasCache($key3));
         $this->assertEquals($this->cacheService->getCache($key1), $value1);
 
-        $this->cacheService->setCache($key2, $value2);
+        $set = $this->cacheService->setCache($key2, $value2);
+        $this->assertEquals($value2, $set);
 
         $this->assertTrue($this->cacheService->hasCache($key1));
         $this->assertTrue($this->cacheService->hasCache($key2));
@@ -126,7 +131,8 @@ class TempCacheServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($this->cacheService->getCache($key1), $value1);
         $this->assertEquals($this->cacheService->getCache($key2), $value2);
 
-        $this->cacheService->setCache($key3, $value3);
+        $set = $this->cacheService->setCache($key3, $value3);
+        $this->assertEquals($value3, $set);
 
         $this->assertTrue($this->cacheService->hasCache($key1));
         $this->assertTrue($this->cacheService->hasCache($key2));

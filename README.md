@@ -18,6 +18,7 @@ It offers the functions:
     /**
      * @param mixed $key
      * @param mixed $value
+     * @return mixed $value
      */
     public function setCache($key, $value);
 
